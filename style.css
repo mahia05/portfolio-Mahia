@@ -1,0 +1,240 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: transparent;
+
+}
+
+body {
+    background: linear-gradient(135deg, #1b132b, #2a1f45);
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9%;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes show-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #c084fc;
+
+}
+
+.logo:hover {
+    background: #a855f7;
+    color: #140f1f;
+    border: 2px solid #a855f7;
+    border-width: 15px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #c084fc;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.6s;
+}
+
+.banner-container h1 {
+    font-size: 35px;
+}
+
+.banner-container h1 span {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .7px #c084fc;
+    white-space: nowrap;
+}
+
+.banner-container h1 span::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: 2px solid #c084fc;
+    color: #c084fc;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+}
+
+.banner-container h2 {
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.banner-container p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
+.banner-container .btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #a855f7;
+    border: 2px solid #a855f7;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #c084fc;
+    font-size: 16px;
+    color: #140f1f;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #c084fc;
+    box-shadow: none;
+}
+
+.banner-container .btn-container .social-media {
+    margin-left: 20px;
+}
+
+.banner-container .btn-container .social-media a {
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid #a855f7;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #c084fc;
+    margin: 0 8px;
+    transition: .5s;
+}
+
+.banner-container .btn-container .social-media a:hover {
+    background: #a855f7;
+    color: #140f1f;
+    box-shadow: 0 0 10px #c084fc;
+}
+
+.banner-img .img-box {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.banner-img .img-box::before,
+.banner-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, #a855f7);
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+
+.banner-img .img-box::after {
+    animation-delay: -5s;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.banner-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #1b132b;
+    border-radius: 50%;
+    border: .1px solid #1b132b;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+
+}
+
+.banner-img .img-box .img-item img {
+    position: absolute;
+    top: 30px;
+    display: block;
+    width: 120%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+.bars-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+}
+
+.bars-animation .bar {
+    width: 100%;
+    height: 100%;
+    background: #221733;
+    transform: translateY(-100%);
+    animation: show-bars .5s ease-in-out forwards;
+    animation-delay: calc(.1s *var(--i));
+}
+
+@keyframes show-bars {
+    100% {
+        transform: translateY(0%);
+    }
+
+
+}
