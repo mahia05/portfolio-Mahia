@@ -68,7 +68,7 @@ a {
 }
 
 .banner-container h1 {
-    font-size: 35px;
+    font-size: 45px;
 }
 
 .banner-container h1 span {
@@ -76,30 +76,37 @@ a {
     display: inline-block;
     color: transparent;
     -webkit-text-stroke: .7px #c084fc;
-    white-space: nowrap;
+    white-space: normal;
 }
+
 
 .banner-container h1 span::before {
     content: attr(data-text);
     position: absolute;
-    width: 0;
-    border-right: 2px solid #c084fc;
+    inset: 0;
     color: #c084fc;
-    white-space: nowrap;
     overflow: hidden;
+    clip-path: inset(0 100% 0 0);
     animation: fill-text 4s linear infinite;
 }
 
+
 @keyframes fill-text {
 
-    10%,
-    100% {
-        width: 0;
+    0% {
+        clip-path: inset(0 100% 0 0);
     }
 
-    70%,
+    70% {
+        clip-path: inset(0 0 0 0);
+    }
+
     90% {
-        width: 100%;
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 100% 0 0);
     }
 }
 
@@ -236,5 +243,189 @@ a {
         transform: translateY(0%);
     }
 
+
+}
+
+@media (max-width: 992px) {
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        height: auto;
+        padding: 120px 6% 40px;
+    }
+
+    .banner-container h1 {
+        font-size: 32px;
+    }
+
+    .banner-container p {
+        font-size: 15px;
+    }
+
+    .banner-container .btn-container {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .banner-img .img-box {
+        width: 55vw;
+        height: 55vw;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .navbar .logo {
+        font-size: 24px;
+    }
+
+    .banner-container h1 {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+
+    .banner-container h2 {
+        font-size: 18px;
+    }
+
+    .banner-container p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 9px 20px;
+        font-size: 14px;
+    }
+
+    .banner-img .img-box {
+        width: 65vw;
+        height: 65vw;
+    }
+
+    .banner-container h1 span {
+        white-space: normal;
+        /* allow wrap on small screen */
+    }
+
+}
+
+/*contact me part*/
+section {
+    padding: 40px 15%;
+}
+
+.contact {
+    padding: 40px 15%;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+    grid-gap: 6rem;
+}
+
+.contact-img img {
+    max-width: 100%;
+    width: 720px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.contact-form h1 {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+span {
+    color: #a855f7;
+}
+
+.contact-form form {
+    position: relative;
+}
+
+.contact-form form input,
+form textarea {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    outline: none;
+    background: #2a1f45;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    border-radius: 10px;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 200px;
+}
+
+.contact-form form .btn {
+    display: inline-block;
+    background: #a855f7;
+    border: 2px solid #a855f7;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 0 10px #c084fc;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #140f1f;
+    font-weight: 600;
+    transition: ease .20s;
+    cursor: pointer;
+
+}
+
+.contact-form form .btn:hover {
+    background: transparent;
+    color: #c084fc;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 1570px) {
+    section {
+        padding: 80px 3%;
+        transition: .2s;
+    }
+
+    .contact-form h1 {
+        font-size: 40px;
+    }
+
+}
+
+@media screen and (max-width:1090px) {
+    .contact {
+        grid-gap: 2rem;
+        transition: .3s;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        order: 2;
+    }
+
+    .contact-img img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
 }
