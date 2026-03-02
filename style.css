@@ -79,21 +79,6 @@ nav a.active {
     display: none;
 }
 
-/*section {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 10rem 9% 2rem;
-    background: ;
-    visibility: hidden;
-    opacity: 0;
-    overflow: hidden;
-}
-    section.active {
-    visibility: visible;
-    opacity: 1;
-    overflow: auto;
-}*/
 
 section {
     min-height: 100vh;
@@ -322,13 +307,13 @@ section {
     color: #a855f7;
 }
 
-/* Main Layout */
+
 .about-main {
     max-width: 1100px;
     margin: auto;
 }
 
-/* Intro Card */
+
 .about-intro-card {
     background: linear-gradient(145deg, #2a1f45, #1b132b);
     padding: 3.5rem;
@@ -348,14 +333,14 @@ section {
     color: #d8c9ff;
 }
 
-/* Education Grid */
+
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     gap: 3rem;
 }
 
-/* Education Card */
+
 .edu-card {
     background: #2a1f45;
     padding: 2.5rem;
@@ -423,7 +408,7 @@ section {
     box-shadow: 0 0 40px rgba(168, 85, 247, 0.35);
 }
 
-/* Icon Row */
+
 .icon-row {
     display: flex;
     justify-content: space-between;
@@ -431,11 +416,16 @@ section {
     margin-bottom: 2.5rem;
 }
 
-/* Main Icon Bigger */
+
 .skill-icon {
     font-size: 9rem;
     color: #fff;
     transition: .3s ease;
+}
+
+.skill-icon {
+    width: 9rem;
+    height: 9rem;
 }
 
 .skill-card:hover .skill-icon {
@@ -443,7 +433,7 @@ section {
     color: #a855f7;
 }
 
-/* Arrow + Name Area */
+
 .arrow-area {
     display: flex;
     flex-direction: column;
@@ -451,7 +441,7 @@ section {
     gap: 1rem;
 }
 
-/* Arrow Button */
+
 .arrow-btn {
     display: flex;
     justify-content: center;
@@ -463,7 +453,7 @@ section {
     transition: .3s ease;
 }
 
-/* Arrow Icon */
+
 .arrow-btn i {
     font-size: 2.2rem;
     color: #1b132b;
@@ -471,7 +461,7 @@ section {
     transition: .3s ease;
 }
 
-/* Hover Animation */
+
 .arrow-btn:hover i {
     transform: translateX(-6px) rotate(180deg);
 }
@@ -480,14 +470,14 @@ section {
     background: #c084fc;
 }
 
-/* Skill Name Bigger */
+
 .skill-name {
     font-size: 2rem;
     font-weight: 600;
     color: #fff;
 }
 
-/* Paragraph */
+
 .skill-card p {
     font-size: 1.7rem;
     line-height: 1.8;
@@ -495,10 +485,6 @@ section {
 }
 
 
-
-/* =============================
-   GLOBAL RESPONSIVE
-============================= */
 
 @media (max-width: 1200px) {
 
@@ -528,12 +514,12 @@ section {
         height: 55vw;
     }
 
-    /* About */
+
     .about-main {
         text-align: center;
     }
 
-    /* Skills */
+
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
         gap: 3rem;
