@@ -627,6 +627,12 @@ section {
     box-shadow: 0 0 30px rgba(168, 85, 247, .25);
 }
 
+@media(max-width:600px) {
+    .project-video video {
+        width: 110%;
+    }
+}
+
 .live-github a {
     position: relative;
     display: inline-flex;
@@ -813,6 +819,28 @@ section {
         font-size: 4rem;
         cursor: pointer;
         color: #fff;
+    }
+}
+
+/*footer*/
+footer {
+    background: #0f0a1a;
+    padding: 3.5rem 9%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.6rem;
+    margin-top: 60px;
+    box-shadow: 0 -5px 30px rgba(168, 85, 247, 0.12);
+}
+
+.footer-container p {
+    letter-spacing: .05rem;
+}
+
+/* footer Responsive */
+@media(max-width:768px) {
+    footer {
+        padding: 2rem 5%;
     }
 }
 
